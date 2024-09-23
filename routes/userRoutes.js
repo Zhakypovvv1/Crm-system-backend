@@ -5,6 +5,7 @@ import { uploadAvatarController } from "../controllers/user/uploadAvatarControll
 import upload from "../middlewares/multer.js";
 import { updateProfileController } from "../controllers/user/updateProfileController.js";
 import { validateUserProfile } from "../validators/validateUserProfile.js";
+import { updatePasswordController } from "../controllers/user/updatePasswordController.js";
 const userRoutes = express.Router();
 
 userRoutes.get("/user-info", verifyToken, getUserInfoController);
@@ -19,5 +20,10 @@ userRoutes.patch(
   verifyToken,
   validateUserProfile,
   updateProfileController
+);
+userRoutes.patch(
+  "/update-password",
+  verifyToken,
+  updatePasswordController
 );
 export default userRoutes;

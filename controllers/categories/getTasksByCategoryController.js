@@ -14,7 +14,7 @@ export const getTasksByCategoryController = async (req, res) => {
       .limit(pageSize)
       .populate("category");
 
-    res.status(200).send({ tasks, pages });
+    res.status(200).send({ tasks, pages, total });
   } catch (e) {
     res.status(500).send("Internal Server Error");
   }

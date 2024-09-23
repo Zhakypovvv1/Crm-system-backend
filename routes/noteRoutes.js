@@ -16,6 +16,6 @@ noteRoutes.post(
 );
 noteRoutes.get("/:taskId/get-notes", verifyToken, getNotesController);
 noteRoutes.delete("/:noteId/note-delete", deleteNoteController);
-noteRoutes.patch("/:noteId/note-edit", verifyToken, noteEditController);
+noteRoutes.patch("/:id/note-edit", verifyToken, noteEditController);
 
 export default noteRoutes;

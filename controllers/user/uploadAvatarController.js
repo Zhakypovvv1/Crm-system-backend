@@ -17,7 +17,7 @@ export const uploadAvatarController = async (req, res) => {
     user.avatarUrl = avatarUrl;
     await user.save();
 
-    res.status(200).send({ message: "Avatar uploaded" });
+    res.status(200).send({ message: "Avatar uploaded", avatarUrl });
   } catch (e) {
     console.error(e);
     return res.status(500).send("Internal Server Error");

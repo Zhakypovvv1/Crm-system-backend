@@ -1,12 +1,12 @@
 import Note from "../../models/Note.js";
 
 export const noteEditController = async (req, res) => {
-  const { noteId } = req.params;
+  const { id } = req.params;
   const { text } = req.body;
-  console.log(noteId);
+  console.log(id);
   console.log(text);
   try {
-    const note = await Note.findById(noteId);
+    const note = await Note.findById(id);
     console.log(note);
     if (!note) {
       return res.status(404).send("Note not found");
